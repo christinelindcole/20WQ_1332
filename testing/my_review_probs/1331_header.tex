@@ -1,0 +1,284 @@
+\usepackage[usenames,dvipsnames]{xcolor}
+
+\usepackage{cancel,fancybox, color,graphicx,lineno, float}
+%amsmath, amssymb,amsthm,
+\usepackage{sectsty} 
+\usepackage{graphicx,fancybox}
+%\usepackage{titlesec}
+\usepackage[page]{totalcount}
+\usepackage{fancyvrb}
+%\usepackage{enumerate,multicol}
+% ====================================================================
+% ====================================================================
+% Geometry, Margins, etc.
+% ====================================================================
+% ====================================================================
+%\usepackage[margin=1in,paperwidth=8.5in,paperheight=11in,voffset=0in]{geometry}
+
+\setlength\parskip{0.08in}
+\setlength\parindent{0in}
+\newcommand{\vs}{\vspace*{0.1in}}
+\newcommand{\no}{\noindent}
+
+\makeatletter
+	\def\hrulefill{\leavevmode\leaders\hrule height 1pt\hfill\kern\z@}
+	\renewcommand{\boxed}[1]{\textcolor{\boxedcolor}{\fbox{\normalcolor\m@th$\displaystyle#1$}}}
+\makeatother
+
+\long\def\symbolfootnote[#1]#2{\begingroup%
+\def\thefootnote{\fnsymbol{footnote}}\footnote[#1]{#2}\endgroup}
+\def\disclaimer{\symbolfootnote[0]{$\dagger$~~These lecture notes are based on those of Dr. Katie Oliveras at Seattle University.  They have been modified to fit this class.}}
+
+\usepackage{fancyhdr}
+ 
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0pt}
+
+\fancyhf{}
+
+\fancyhfoffset[l]{.5in}
+\fancyhfoffset[r]{.5in}
+
+\lhead{\texttt{\myTitle}}
+\rhead{\texttt{\mySubTitle}}
+\rfoot{{\texttt{Page \thepage~of \totalpages}}}
+\lfoot{\color{sblack!60}{\texttt{\copyright ~ C. Cole \& S. Klee, Seattle University}}}
+%\lfoot{\color{sblack!60}{\texttt{Dr. Christine Cole, Seattle University, based on notes from Dr. Katie Oliveras.}}}
+% ====================================================================
+% ====================================================================
+\usepackage{mdframed,color}
+\global\mdfdefinestyle{simplestyle}{%
+linecolor=sblue,linewidth=2pt,%
+}
+
+%\newenvironment{example}[1]{\refstepcounter{example}\par\medskip\noindent\begin{mdframed}[style=simplestyle,backgroundcolor=white,]\df{Example~\theexample}#1} {\medskip\end{mdframed}}
+% ====================================================================
+% ====================================================================
+% Define Colors
+% ====================================================================
+% ====================================================================
+
+\definecolor{ltgrey}{rgb}{.98,.98,.98}
+\definecolor{dkgrey}{RGB}{95,95,95}
+\definecolor{nred}{RGB}{179,80,65}
+\definecolor{sured}{RGB}{170,0,0}
+\definecolor{sro}{RGB}{239,65,53}
+\definecolor{sblue}{RGB}{71,195,211}
+\definecolor{syell}{RGB}{253,185,19}
+\definecolor{sgreen}{RGB}{108,179,63}
+\definecolor{snblue}{RGB}{0,36,93}
+\definecolor{syellT}{RGB}{255,247,236}
+\definecolor{sblack}{RGB}{57,57,57}
+\definecolor{semerald}{RGB}{0,155,122}
+
+
+% ====================================================================
+% ====================================================================
+% Font Selections, Text, Title, Sections, Footnotes, etc
+% ====================================================================
+% ====================================================================
+\renewcommand{\familydefault}{\sfdefault}
+\allsectionsfont{\ttfamily} % Makes the Section fonts a typewriter font
+\renewcommand\ttdefault{lmvtt}% Sets the typewriter font to Latin Modern 
+\newcommand{\titleFont}[1]{\ttfamily\Huge\color{black}{ #1}}
+\newcommand{\subtitleFont}[1]{\ttfamily\LARGE\color{black}{ #1}}
+% - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+% Title Block
+% - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+\newcommand{\lectTitle}[2]{\vspace*{-1.25in}\hspace*{-1.5in}
+	{\fcolorbox{dkgrey!40}{dkgrey!40}{
+	\parbox{9.5in}{
+		\begin{center}
+			\parbox{1.2\textwidth}{
+			\vspace*{.6in}
+			\begin{center} 
+				\titleFont{#1}\\
+				\subtitleFont{#2}
+				\end{center}
+			\vspace*{.2in}}
+			\end{center}}
+			}
+		}
+
+	}
+
+\newcommand{\lectTitleT}[2]{\vspace*{-1.25in}\hspace*{-1.5in}
+	\fcolorbox{dkgrey!40}{dkgrey!40}{
+		\begin{minipage}[c][3in][b]{9.5in}
+		\centering
+		\vfill
+		\titleFont{#1}\\
+		\subtitleFont{#2}
+		\vspace*{1.25in}
+		\end{minipage}
+	}
+}
+
+\newcommand{\titlePage}[3]{\thispagestyle{empty}
+\lectTitleT{#1}{#2}
+\vfill
+\vfill
+\section*{Abstract}
+{\large{#3}}
+\vfill
+
+\hfill Last Update: \today
+\newpage}
+%% - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+%% Section Headers
+%% - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+%\titleformat{\section}
+%{\color{sblack!90}}{\thesection}{20pt}{
+%\hspace*{-.5in}\ttfamily\LARGE}[\vspace*{-.2in}\hspace*{-.5in}\rule{7.5in}{.4pt}]
+%\titlespacing*{\section}
+%  {0pt}{5pt}{5pt}
+%% - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+%% SubSection Headers
+%% - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+%\titleformat{\subsection}
+%{\color{sblack!80}}{\thesubsection}{1em}{\hspace*{-.25in}\ttfamily\Large}[\vspace*{-.2in}\hspace*{-.25in}\rule{7.25in}{.4pt}]
+%\titlespacing*{\subsection}
+%  {0pt}{5pt}{5pt}
+%% - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+%% SubSubSection Headers
+%% - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+%\titleformat{\subsubsection}
+%{\color{sblack}}{\thesubsubsection}{1em}{\ttfamily\large}[\vspace*{-.1in}]
+
+% - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+% Redefining the font/symbol for footnotes
+% - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+\long\def\symbolfootnote[#1]#2{\begingroup%
+	\def\thefootnote{\fnsymbol{footnote}}\footnote[#1]{#2}\endgroup}
+% ====================================================================
+% ====================================================================
+
+
+
+
+
+
+	
+% ====================================================================
+% ====================================================================
+% Setting up boxed enviornments
+% ====================================================================
+% ====================================================================
+\fboxrule=2pt % All boxed enviornments will have a weight of 2pt
+\newcommand*{\boxedcolor}{sblue} % Setting the color for the \boxed command
+
+
+% - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+% Call out boxes (Multi lined)
+% - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+\newcommand{\callout}[1]{\begin{center} 
+\fcolorbox{sgreen}{white}{{\parbox{5.5in}{#1
+	
+	}}}
+	
+	\end{center}
+}
+% - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+% Call out box; in-line
+% - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+\newcommand{\impBox}[1]{\fcolorbox{sblue}{white}{{#1}}}
+% - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+% - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+% Solution Box
+% - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+\newcommand{\sol}[1]{
+	\fcolorbox{sblue!75}{sblue!75}{
+		{\parbox{.98\textwidth}{
+			\centering\parbox{.9\textwidth}{{\color{black}{\vspace*{.1in} #1}}}
+			}}
+		\vspace*{.1in}
+	}
+}
+% - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+% - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+% Final Answer boxes
+% - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+\newcommand{\finalans}[1]{\vspace*{.1in}\begin{center}\fcolorbox{sblue}{white}{{#1}}\end{center}\vspace*{.1in}}
+% - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+% - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+% - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+\newcommand{\fig}[4]{
+\fcolorbox{sgreen}{white}{\parbox{1in}{
+	\begin{figure}[H]
+	\centering
+	\includegraphics[width=#1]{#2}
+	\vspace*{-.1in}
+	\caption{#3}\label{#4}
+	\end{figure}}}
+}
+
+\newcommand{\figWOCaption}[2]{\begin{center}
+\fcolorbox{sro}{white}{
+	\includegraphics[width=#1]{#2}}\end{center}}
+
+
+% - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+\newcommand{\df}[1]{{\color{white}{\bf\Large{\bf\texttt{#1}}} \vspace*{.05in} \hrule}}
+% - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+\newcommand{\newDef}[2]{\sol{\df{Definition: #1}\vspace*{.1in}  #2}}
+
+
+% - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+% Example Problem
+% - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+\newcommand{\example}[2]{\sol{
+\vspace*{.15in}\df{Example}\vspace*{.1in} #1\vspace{.05in}
+
+\df{Solution}\vspace*{.1in} #2}}
+% - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+
+\newcommand{\thmWithProof}[2]{\sol{\df{Theorem}\vspace*{.1in} {\textit{#1}}\vspace{.2in}\\ \df{Proof}\vspace*{.1in} #2}}
+\newcommand{\thmWithProofAndTitle}[3]{\sol{\df{Theorem: #1}\vspace*{.1in} {\textit{#2}}\vspace{.2in}\\ \df{Proof}\vspace*{.1in} #3}}
+
+\newcommand{\thmWithoutProof}[1]{\sol{\df{Theorem}\vspace*{.1in} {\textit{#1}}}}
+\newcommand{\thmTitleWithoutProof}[2]{\sol{\df{#1}\vspace*{.1in} {\textit{#2}}}}
+%\renewcommand{\thesection}{\hspace*{-0.23in}}
+%\renewcommand{\thesubsection}{\arabic{subsection}.}
+\newcommand{\is}{\stackrel{\mbox{?}}{=}}
+\newcommand{\Is}{\stackrel{\mbox{!}}{=}}
+
+\newenvironment{colframe}{% 
+  \begin{Sbox} 
+    \begin{minipage}{6.5in} 
+}{% 
+
+  \end{minipage} 
+  \end{Sbox} 
+  \begin{center} 
+    \fcolorbox{sgreen}{white}{\TheSbox} 
+  \end{center} 
+} 
+
+
+
+% = = = = = = =
+\newcommand{\checkWork}[1]{{\color{sro}{\textbf{#1}}}}
+\newcommand{\emA}[1]{{\color{sro}{{#1}}}}
+\newcommand{\emB}[1]{{\color{sgreen}{{#1}}}}
+\newcommand{\emC}[1]{{\color{sblue}{{#1}}}}
+
+\newcommand{\myTitle}{Math 1331 | Calculus I (A)}
+\newcommand{\mySubTitle}{}
+
+\newcommand{\undergrad}{\emA{$^\dagger$}}
+\newcommand{\advanced}{\emA{$^\ddagger$}}
+
+\newcommand{\bCodeBlock}{
+\begin{colframe}
+\begin{Verbatim}[fontfamily=courier]
+}
+\newcommand{\eCodeBlock}{
+\end{Verbatim}
+\end{colframe}}
+

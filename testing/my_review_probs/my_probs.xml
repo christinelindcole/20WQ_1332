@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!-- Compiles with the following relative path to mathbook:
+ xsltproc ../../../../../../PreTeXt/mathbook/xsl/mathbook-html.xsl my_probs.xml
+-->
+
+ <pretext>
+
+   <docinfo>
+
+     <latex-image-preamble>
+     \usepackage{pgfplots}               % loads tikz package
+     \usepackage{smartdiagram}           % for a circular diagram
+     \pgfplotsset{axis x line = middle,
+                  axis y line = middle}
+     \usetikzlibrary{backgrounds}
+     \usetikzlibrary{arrows,matrix}
+     \usetikzlibrary{positioning}        % for Dave R's worksheet
+     \usepackage{circuitikz}             % for Virgil P's worksheet
+     </latex-image-preamble>
+
+   </docinfo>
+
+    <article xml:id="review-problems">
+        <title>Final Exam Review Problems</title>
+	<subtitle> Math 1331 - Fall 2019</subtitle>
+
+        <worksheet xml:id="worksheet-review">
+            <title>Additional Review Problems</title>
+		<exercise>
+			If <m>\theta</m> is an angle between <m>\frac{\pi}{2}</m> and <m>\pi</m> such that
+			<m>\tan(\theta) = 4</m>, find <m>\sin(\theta)</m> and
+			<m>\cos(\theta)</m>.
+		</exercise>
+		<exercise>
+			Give exact values for each of the following quantities.
+			<ol>
+			<li><m>\sin\left(\frac{\pi}{3}\right)</m></li>
+			<li><m>\cos\left(\frac{\pi}{6}\right)</m></li>
+			</ol>
+		</exercise>
+
+    <exercise>
+      The graph below shows the position of Bob's car on his commute to work.
+      The variable <m>t</m> is measured in hours so that <m>t=8</m> corresponds to 8:00AM.
+       Distance is measured in miles.
+       <figure xml:id="fig-bobs-car">
+         <caption>A figure generated with TikZ in
+         <latex /></caption>
+         <image width="50%" xml:id="img-bobs-car">
+           <latex-image>
+             \begin{tikzpicture} [scale=.8]
+             \draw[dotted] (-1,-1) grid (6,6);
+             \draw[->] (-1,0) -- (6,0);
+             \draw[->] (-1,-1) -- (-1,6);
+             \draw (0,-1.5) node {6};
+             \draw (1,-1.5) node {6.5};
+             \draw (2,-1.5) node {7};
+             \draw (3,-1.5) node {7.5};
+             \draw (4,-1.5) node {8};
+             \draw (5,-1.5) node {8.5};
+             \draw (6,-1.5) node {9};
+             \draw (6.5,0) node {$t$};
+             \draw (-1.5,0) node {$0$};
+             \draw (-1.5,1) node {$10$};
+             \draw (-1.5,2) node {$20$};
+             \draw (-1.5,3) node {$30$};
+             \draw (-1.5,4) node {$40$};
+             \draw (-1.5,5) node {$50$};
+             \draw (-1.5,6) node {$p$};
+             \draw (1,0) -- (2.5,3) -- (3.5,3) -- (5,5);
+             \end{tikzpicture}
+         </latex-image>
+       </image>
+     </figure>
+      <ol>
+        <li> How far does Bob have to drive in order to get to work?</li>
+        <li> What was the car's average velocity between 7:00AM and 8:30AM?</li>
+        <li> What was Bob's instantaneous velocity at 7:30AM? </li>
+        <li> Was Bob driving faster at 7:00AM or 8:00AM?</li>
+        <li> If Bob drove to work between 6:30AM and 8:30AM, how could you
+          describe his commute?</li>
+      </ol>
+    </exercise>
+
+
+        </worksheet>
+
+    </article>
+
+</pretext>
