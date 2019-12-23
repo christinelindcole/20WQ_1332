@@ -2,6 +2,7 @@
 
 <!-- Compiles with the following relative path to mathbook:
  xsltproc ../../../../../../PreTeXt/mathbook/xsl/mathbook-html.xsl my_probs.xml
+ xsltproc -o rev_probs.tex ../../../../../../PreTeXt/mathbook/user/pretext-latex-class-handouts.xsl my_probs.xml
 -->
 
  <pretext>
@@ -41,7 +42,7 @@
 		</exercise>
 
     <exercise>
-      The graph below shows the position of Bob's car on his commute to work.
+      <xref ref="fig-bobs-car" text="type-global"/> shows the position of Bob's car on his commute to work.
       The variable <m>t</m> is measured in hours so that <m>t=8</m> corresponds to 8:00AM.
        Distance is measured in miles.
        <figure xml:id="fig-bobs-car">
@@ -85,7 +86,7 @@
 
     <exercise>
       <statement>
-        Figure <xref ref="derivatives-table" text="type-hybrid"/> shows the values of <m>f(x)</m>, <m>g(x)</m>,
+        <xref ref="derivatives-table" text="type-global"/> shows the values of <m>f(x)</m>, <m>g(x)</m>,
         <m>f'(x)</m>, and <m>g'(x)</m> for certain values of <m>x</m>.
 
         Find the rate of change of each of the following functions when <m>x=2</m>.
@@ -100,10 +101,6 @@
     </exercise>
 
     <table xml:id="derivatives-table">
-      <title>
-          This table shows values of <m>f(x)</m>, <m>g(x)</m>,
-          <m>f'(x)</m>, and <m>g'(x)</m> for certain values of <m>x</m>.
-      </title>
       <tabular top="medium" left="medium" right="medium" bottom="medium">
         <row bottom="major">
           <cell> <m>x</m> </cell>
@@ -128,10 +125,11 @@
           <cell> -6 </cell>
         </row>
       </tabular>
+      <title>
+          This table shows values of <m>f(x)</m>, <m>g(x)</m>,
+          <m>f'(x)</m>, and <m>g'(x)</m> for certain values of <m>x</m>.
+      </title>
     </table>
-
-
-
         </worksheet>
 
     </article>
