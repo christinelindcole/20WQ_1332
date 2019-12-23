@@ -83,6 +83,54 @@
       </ol>
     </exercise>
 
+    <exercise>
+      <statement>
+        Figure <xref ref="derivatives-table" text="type-hybrid"/> shows the values of <m>f(x)</m>, <m>g(x)</m>,
+        <m>f'(x)</m>, and <m>g'(x)</m> for certain values of <m>x</m>.
+
+        Find the rate of change of each of the following functions when <m>x=2</m>.
+        <ol>
+        <li> <m>f(g(x))</m> </li>
+        <li> <m>g(f(x))</m> </li>
+        <li> <m>f(x) \cdot g(x)</m> </li>
+        <li> <m>\dfrac{f(x)}{g(x)}</m> </li>
+        <li> <m>f(2x-1)</m> </li>
+        </ol>
+      </statement>
+    </exercise>
+
+    <table xml:id="derivatives-table">
+      <title>
+          This table shows values of <m>f(x)</m>, <m>g(x)</m>,
+          <m>f'(x)</m>, and <m>g'(x)</m> for certain values of <m>x</m>.
+      </title>
+      <tabular top="medium" left="medium" right="medium" bottom="medium">
+        <row bottom="major">
+          <cell> <m>x</m> </cell>
+          <cell> <m>f(x)</m> </cell>
+          <cell> <m>g(x)</m> </cell>
+          <cell> <m>f'(x)</m> </cell>
+          <cell> <m>g'(x)</m> </cell>
+        </row>
+        <row>
+          <cell> 1 </cell> <cell> -3 </cell>
+          <cell> 4 </cell> <cell> 6 </cell>
+          <cell> 5 </cell>
+        </row>
+        <row>
+          <cell> 2 </cell> <cell> 1 </cell>
+          <cell> 3 </cell> <cell> -2 </cell>
+          <cell> -1 </cell>
+        </row>
+        <row>
+          <cell> 3 </cell> <cell> 9 </cell>
+          <cell> 3 </cell> <cell> -7 </cell>
+          <cell> -6 </cell>
+        </row>
+      </tabular>
+    </table>
+
+
 
         </worksheet>
 
